@@ -2,38 +2,25 @@ package main
 
 
 
-func main(){
-	// multiples_of_n(500)
-	// fizzBuzz(40)
-	// x := []int{
-	// 	48,96,86,68,
-	// 	57,82,63,70,
-	// 	37,34,83,27,
-	// 	19,97, 9,17,
-	// 	}
-	// getSmallestValue(x)
-	// getLargestValue(x...)
 
-		// problem1(1000)
-		problem2(400)
+func main(){
+Problem2(50)
 		
 }
-//sum of even fibonacci terms from 1,2,3,5,8........
-func problem2(n int){
-	var re = getFibonacci(n)
+func Problem2(n int){
+	var re = getEvenFibonacci(n)
 	sum:=0
 	for _,r := range re{
-		if r % 2 == 0{
 			sum+=r
-		}
 	}
 	println(sum)
 }
-func getFibonacci(n int) ([]int){
+func getEvenFibonacci(n int) ([]int){
 	var res  []int
 	for i:=1;i<=n;i++{
+		if f(i) % 2 == 0{
 		res = append(res, f(i))
-		
+		}
 	}
 	return res
 }
@@ -43,20 +30,7 @@ func f(n int) (int){
 	}
 	return f(n-1) + f(n-2)
 }
-// sum of multiples of 3 and 5
-// func problem1(n int){
-// 	sum := 0
-// 	for i:=1;i<n;i++{
-// 		if i%3==0 || i%5==0{
-// 			sum+=i
-// 		}else{
-// 			continue
-// 		}
-		
-		
-// 	}
-// 	println(sum)
-// }
+
 // func multiples_of_n(n int){
 // 	for i:=1;i<=n;i++{
 // 		if i % 3 !=0{
